@@ -27,7 +27,7 @@ Sample Input
 | 20 | 21 | 22 |
 | 13 | 14 | 30 |
 
-````
+````sql
 select
     case 
     when A + B <= C or B + C <= A or C + A <= B then 'Not A Triangle'
