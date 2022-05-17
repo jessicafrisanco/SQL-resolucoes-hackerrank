@@ -11,7 +11,7 @@ The CITY table is described as follows:
 | DISTRICT | VARCHAR2(20) |
 | POPULATION | NUMBER |
 
-````
+````sql
 select 
   *
 from city
@@ -32,7 +32,7 @@ The CITY table is described as follows:
 | DISTRICT | VARCHAR2(20) |
 | POPULATION | NUMBER |
 
-````
+````sql
 select
   name
 from city
@@ -52,7 +52,7 @@ Query all columns (attributes) for every row in the CITY table. The CITY table i
 | DISTRICT | VARCHAR2(20) |
 | POPULATION | NUMBER |
 
-````
+````sql
 select
   *
 from city;
@@ -70,14 +70,14 @@ Query all columns for a city in CITY with the ID 1661. The CITY table is describ
 | DISTRICT | VARCHAR2(20) |
 | POPULATION | NUMBER |
 
-````
+````sql
 select
   *
 from city
 where id = 1661;
 ````
 
-## Japanese Cities` Atributes
+## Japanese Cities Atributes
 
 Query all attributes of every Japanese city in the CITY table. The COUNTRYCODE for Japan is JPN. The CITY table is described as follows: 
 
@@ -89,7 +89,7 @@ Query all attributes of every Japanese city in the CITY table. The COUNTRYCODE f
 | DISTRICT | VARCHAR2(20) |
 | POPULATION | NUMBER |
 
-````
+````sql
 select
   *
 from city
@@ -108,7 +108,7 @@ Query the names of all the Japanese cities in the CITY table. The COUNTRYCODE fo
 | DISTRICT | VARCHAR2(20) |
 | POPULATION | NUMBER |
 
-````
+````sql
 select
   name
 from city
@@ -127,7 +127,7 @@ Query a list of CITY and STATE from the STATION table. The STATION table is desc
 | LAT_N | NUMBER |
 | LONG_W | NUMBER |
 
-````
+````sql
 select
   city,
   state
@@ -146,7 +146,7 @@ The STATION table is described as follows:
 | LAT_N | NUMBER |
 | LONG_W | NUMBER |
 
-````
+````sql
 select distinct 
   city
 from station
@@ -165,7 +165,7 @@ The STATION table is described as follows:
 | LAT_N | NUMBER |
 | LONG_W | NUMBER |
 
-````
+````sql
 select 
   count(city) - count(distinct city) 
 from station;
@@ -185,7 +185,7 @@ follows:
 | LAT_N | NUMBER |
 | LONG_W | NUMBER |
 
-````
+````sql
 select 
     min(city),
     city_length
@@ -215,7 +215,7 @@ The STATION table is described as follows:
 | LAT_N | NUMBER |
 | LONG_W | NUMBER |
 
-````
+````sql
 select distinct
     city
 from station
@@ -243,7 +243,7 @@ The STATION table is described as follows:
 | LAT_N | NUMBER |
 | LONG_W | NUMBER |
 
-````
+````sql
 select distinct
     city
 from station
@@ -271,7 +271,7 @@ The STATION table is described as follows:
 | LAT_N | NUMBER |
 | LONG_W | NUMBER |
 
-````
+````sql
 select
     city
 from station
@@ -297,7 +297,7 @@ The STATION table is described as follows:
 | LONG_W | NUMBER |
 
 
-````
+````sql
 select distinct
     city
 from station
@@ -322,7 +322,7 @@ The STATION table is described as follows:
 | LONG_W | NUMBER |
 
 
-````
+````sql
 select distinct
     city
 from station
@@ -346,7 +346,7 @@ The STATION table is described as follows:
 | LAT_N | NUMBER |
 | LONG_W | NUMBER |
 
-````
+````sql
 select distinct
     city
 from station
@@ -371,7 +371,7 @@ The STATION table is described as follows:
 | LAT_N | NUMBER |
 | LONG_W | NUMBER |
 
-````
+````sql
 select distinct
     city
 from station
@@ -405,7 +405,7 @@ Sample Input
 | 4 | Julia | 76 |
 | 3 | Belvet | 84 |
 
-````
+````sql
 select
     name 
 from students 
@@ -446,7 +446,7 @@ Sample Input
 | 98607 | Todd | 5 | 3396 |
 | 99989 | Joe | 9 | 3573 |
 
-````
+````sql
 select
     name
 from employee
@@ -486,7 +486,7 @@ Sample Input
 | 98607 | Todd | 5 | 3396 |
 | 99989 | Joe | 9 | 3573 |
 
-````
+````sql
 select
     name
 from employee
