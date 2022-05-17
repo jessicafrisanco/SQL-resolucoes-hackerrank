@@ -14,7 +14,7 @@ The CITY table is described as follows:
 | DISTRICT | VARCHAR2(20) |
 | POPULATION | NUMBER |
 
-````
+````sql
 select
     round(avg(population))
 from city;
@@ -37,7 +37,7 @@ The CITY table is described as follows:
 | POPULATION | NUMBER |
 
 
-````
+````sql
 select
     sum(population)
 from city
@@ -60,7 +60,7 @@ The CITY table is described as follows:
 | DISTRICT | VARCHAR2(20) |
 | POPULATION | NUMBER |
 
-````
+````sql
 select
     max(population) - min(population) 
 from city;
@@ -99,7 +99,7 @@ Sample Input
 | 3 | Julia | 2210 |
 | 4 | Maria | 3000 |
 
-````
+````sql
 select
     round(avg(salary))- round(avg(replace(salary, 0, '')))
 from employees;
@@ -140,7 +140,7 @@ Sample Input
 | 98607 | Todd | 5 | 3396 |
 | 99989 | Joe | 9 | 3573 |
 
-````
+````sql
 select
     max(salary * months),
     count(name)
