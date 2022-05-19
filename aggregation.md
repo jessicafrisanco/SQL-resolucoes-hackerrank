@@ -1,3 +1,72 @@
+
+## Revising Aggregation - The Count Function
+
+Query a count of the number of cities in CITY having a Population larger than 100000.
+
+Input Format
+
+The CITY table is described as follows:
+
+| Field | Type |
+| --- | --- |
+| ID | NUMBER |
+| NAME | VARCHAR2(17) |
+| COUNTRYCODE | VARCHAR2(3) |
+| DISTRICT | VARCHAR2(20) |
+| POPULATION | NUMBER |
+
+`````sql
+select
+    count(name)
+from city
+where population > 100000;
+`````
+## Revising Aggregation -  The Sum Function
+
+Query the total population of all cities in CITY where District is California.
+
+Input Format
+
+The CITY table is described as follows:
+
+| Field | Type |
+| --- | --- |
+| ID | NUMBER |
+| NAME | VARCHAR2(17) |
+| COUNTRYCODE | VARCHAR2(3) |
+| DISTRICT | VARCHAR2(20) |
+| POPULATION | NUMBER |
+
+`````sql
+select
+    sum(population)
+from city
+where district = 'California';
+`````
+
+## Revising Aggregations - Averages
+
+Query the average population of all cities in CITY where District is California.
+
+Input Format
+
+The CITY table is described as follows:
+
+| Field | Type |
+| --- | --- |
+| ID | NUMBER |
+| NAME | VARCHAR2(17) |
+| COUNTRYCODE | VARCHAR2(3) |
+| DISTRICT | VARCHAR2(20) |
+| POPULATION | NUMBER |
+
+`````sql
+select
+    avg(population)
+from city
+where district = 'California';
+`````
+
 ## Average Population
 
 Query the average population for all cities in CITY, rounded down to the nearest integer.
