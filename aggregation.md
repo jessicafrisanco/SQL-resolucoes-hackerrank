@@ -219,3 +219,212 @@ where salary * months = (select
                          from employee);
 ````
 
+## Weather Observation Station 2
+
+Query the following two values from the STATION table:
+
+1. The sum of all values in LAT_N rounded to a scale of  decimal places.
+2. The sum of all values in LONG_W rounded to a scale of  decimal places.
+
+Input Format
+
+The STATION table is described as follows:
+
+| Field | Type |
+| --- | --- |
+| ID | NUMBER |
+| CITY | VARCHAR2(21) |
+| STATE | VARCHAR2(2) |
+| LAT_N | NUMBER |
+| LONG_W | NUMBER |
+
+where LAT_N is the northern latitude and LONG_W is the western longitude.
+
+`````sql
+select
+    round(sum(lat_n), 2),
+    round(sum(long_w), 2)
+from station;
+`````
+
+## Weather Observation Station 13
+
+Query the sum of Northern Latitudes (LAT_N) from STATION having values greater than 38.7880 and less than 137.2345. Truncate your answer to  decimal places.
+
+Input Format
+
+The STATION table is described as follows:
+
+| Field | Type |
+| --- | --- |
+| ID | NUMBER |
+| CITY | VARCHAR2(21) |
+| STATE | VARCHAR2(2) |
+| LAT_N | NUMBER |
+| LONG_W | NUMBER |
+
+`````sql
+select
+    round(sum(lat_n), 4) 
+from station
+where lat_n > 38.7880 and lat_n < 137.2345;
+
+``````
+
+## Weather Observation Station 14 
+
+Query the greatest value of the Northern Latitudes (LAT_N) from STATION that is less than 137.2345. Truncate your answer to 4 decimal places.
+
+Input Format
+
+The STATION table is described as follows:
+
+| Field | Type |
+| --- | --- |
+| ID | NUMBER |
+| CITY | VARCHAR2(21) |
+| STATE | VARCHAR2(2) |
+| LAT_N | NUMBER |
+| LONG_W | NUMBER |
+
+`````sql
+select
+    round(max(lat_n), 4)
+from station
+where lat_n < 137.2345;
+`````
+
+## Weather Observation Station 15
+
+Query the Western Longitude (LONG_W) for the largest Northern Latitude (LAT_N) in STATION that is less than 137.2345. Round your answer to 4 decimal places.
+
+Input Format
+
+The STATION table is described as follows:
+
+| Field | Type |
+| --- | --- |
+| ID | NUMBER |
+| CITY | VARCHAR2(21) |
+| STATE | VARCHAR2(2) |
+| LAT_N | NUMBER |
+| LONG_W | NUMBER |
+
+`````sql
+select
+    round(long_w, 4)
+from station
+where lat_n = (select
+                  max(lat_n)
+                from station
+                where lat_n < 137.2345);
+
+`````
+
+## Weather Observation Station 16
+
+Query the smallest Northern Latitude (LAT_N) from STATION that is greater than 38.7780. Round your answer to 4 decimal places.
+
+Input Format
+
+The STATION table is described as follows:
+
+| Field | Type |
+| --- | --- |
+| ID | NUMBER |
+| CITY | VARCHAR2(21) |
+| STATE | VARCHAR2(2) |
+| LAT_N | NUMBER |
+| LONG_W | NUMBER |
+
+
+````sql
+select
+    round(min(lat_n), 4)
+from station
+where lat_n > 38.7780;
+
+````
+## Weather Observation Station 17
+
+Query the Western Longitude (LONG_W)where the smallest Northern Latitude (LAT_N) in STATION is greater than 38.7780. Round your answer to 4 decimal places.
+
+Input Format
+
+The STATION table is described as follows:
+
+| Field | Type |
+| --- | --- |
+| ID | NUMBER |
+| CITY | VARCHAR2(21) |
+| STATE | VARCHAR2(2) |
+| LAT_N | NUMBER |
+| LONG_W | NUMBER |
+
+`````sql
+select
+    round(long_w, 4)
+from station
+where lat_n = (select
+                  min(lat_n)
+               from station
+               where lat_n > 38.7780);
+`````
+
+## Weather Observation Station 18
+
+Consider P1(a,b) and P2(c,d) to be two points on a 2D plane.
+
+- _a_ happens to equal the minimum value in Northern Latitude (LAT_N in STATION).
+- _b_ happens to equal the minimum value in Western Longitude (LONG_W in STATION).
+- _c_ happens to equal the maximum value in Northern Latitude (LAT_N in STATION).
+- _d_ happens to equal the maximum value in Western Longitude (LONG_W in STATION).
+- 
+Query the Manhattan Distance between points P1 and P2 and round it to a scale of  decimal places.
+
+Input Format
+
+The STATION table is described as follows:
+
+| Field | Type |
+| --- | --- |
+| ID | NUMBER |
+| CITY | VARCHAR2(21) |
+| STATE | VARCHAR2(2) |
+| LAT_N | NUMBER |
+| LONG_W | NUMBER |
+
+`````sql
+select 
+     round(abs(max(lat_n) - min(lat_n)) + abs(max(long_w) - min(long_w)), 4)
+from station;
+`````
+
+## Weather Observation Station 19
+
+Consider P1(a,c) and P2(b,d) to be two points on a 2D plane where (a,b) are the respective minimum and maximum values of Northern Latitude (LAT_N) and (c,d) are the respective minimum and maximum values of Western Longitude (LONG_W) in STATION.
+
+Query the Euclidean Distance between points P1 and P2 and format your answer to display  decimal digits.
+
+Input Format
+
+The STATION table is described as follows:
+
+| Field | Type |
+| --- | --- |
+| ID | NUMBER |
+| CITY | VARCHAR2(21) |
+| STATE | VARCHAR2(2) |
+| LAT_N | NUMBER |
+| LONG_W | NUMBER |
+
+`````sql
+select 
+     round(sqrt(pow(max(lat_n) - min(lat_n), 2) + pow(max(long_w) - min(long_w), 2)), 4)
+from station;
+``````
+
+
+
+
+
